@@ -16,8 +16,11 @@ public class Task2 {
     public static void main(String[] args) throws InterruptedException {
         System.setProperty("webdriver.chrome.driver", "Drivers/chromedriver.exe");
         WebDriver driver = new ChromeDriver();
-        driver.get("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
+        driver.get("http://www.google.com");
         driver.manage().window().maximize();
+        Thread.sleep(2000);
+        driver.navigate().to("http://hrm.syntaxtechs.net/humanresources/symfony/web/index.php/auth/login");
+        Thread.sleep(2000);
         driver.findElement(By.cssSelector("input#txtUsername")).sendKeys("Admin");
         Thread.sleep(2000);
         driver.findElement(By.cssSelector("input#btnLogin")).click();
