@@ -28,12 +28,17 @@ public class Task1 {
         for (WebElement link : links) {
             String linkWithText = link.getText();
             if (!linkWithText.isEmpty()) {
-                System.out.println(linkWithText);
+                String linkHasText = link.getAttribute("href");
+                System.out.println(linkHasText);
+                System.out.println("***********************");
+
+
 
             }
             //sorry, at that task I need more practice))
 
         }
+        driver.quit();
     }
 }
 
