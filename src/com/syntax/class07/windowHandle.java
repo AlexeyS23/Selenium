@@ -25,26 +25,43 @@ public class windowHandle {
         helpBTN.click();
         termBTN.click();
         privacyBTN.click();
-        //
+        //to print all we need to create a SET
         Set<String> allwindowsHandels = driver.getWindowHandles();
         System.out.println("number of windows "+allwindowsHandels.size());
         // to print we need to iterate over the Set
         Iterator<String>it=allwindowsHandels.iterator();
-        singUpPage=it.next();
-        String helpPageHandle = it.next();
-        String privacyPageHandle = it.next();
-        String termPageHandle = it.next();
+        //iterate through each window handle
+        while(it.hasNext()){
+           // switch to terms page
+            String handle = it.next();
+            //to switch to this particular handle/window
+            driver.switchTo().window(handle);
+            //i need to make sure this is my desired window
+            String title=driver.getTitle();
+            //if condition
+            if (title.equalsIgnoreCase("Google terms of ")){
+                System.out.println(title);
+                break;
+            }
+        }
 
-        System.out.println("The handles for signup page is: " + singUpPage);
-        System.out.println("The handles for help page is: " + helpPageHandle);
-        System.out.println("The handles for privacy page is: " + privacyPageHandle);
-        System.out.println("The handles for term page is: " + termPageHandle);
 
-        //switch to help page
-        driver.switchTo().window(helpPageHandle);
-        System.out.println(driver.getTitle());
+       // singUpPage=it.next();   - вариант №1 с сетом
+       // String helpPageHandle = it.next();- вариант №1 с сетом
+        //String privacyPageHandle = it.next();   - вариант №1 с сетом
+        //String termPageHandle = it.next();   - вариант №1 с сетом
+
+       // System.out.println("The handles for signup page is: " + singUpPage);   - вариант №1 с сетом
+       // System.out.println("The handles for help page is: " + helpPageHandle);   - вариант №1 с сетом
+       // System.out.println("The handles for privacy page is: " + privacyPageHandle);   - вариант №1 с сетом
+       // System.out.println("The handles for term page is: " + termPageHandle);   - вариант №1 с сетом
+
+        //switch to help page   - вариант №1 с сетом
+      //  driver.switchTo().window(helpPageHandle);   - вариант №1 с сетом
+      //  System.out.println(driver.getTitle());   - вариант №1 с сетом
 
         driver.quit();
+
 
     }
 }

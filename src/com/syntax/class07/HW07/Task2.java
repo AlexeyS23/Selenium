@@ -21,6 +21,7 @@ public class Task2 {
         driver.switchTo().frame(frame2);
         WebElement childText = driver.findElement(By.xpath("//p[text()='Child Iframe']"));
         System.out.println(childText.getText());
+
         driver.quit();
 
 
