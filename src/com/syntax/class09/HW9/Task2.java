@@ -34,7 +34,7 @@ public class Task2 {
         WebElement deleteButton = driver.findElement(By.cssSelector("input.btnDeleteSelected"));
         deleteButton.click();
 
-        driver.quit();
+       driver.quit();
 
 
 

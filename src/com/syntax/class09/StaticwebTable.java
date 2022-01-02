@@ -30,9 +30,15 @@ public class StaticwebTable {
         }
 //3. print all the headers
 
-        List<WebElement> cells = driver.findElements(By.xpath("//table[@id='task-table']/thead"));
+        List<WebElement> headers = driver.findElements(By.xpath("//table[@id='task-table']/thead"));
+        for (WebElement head: headers
+             ) {
+            String textHeaders=head.getText();
+            System.out.println(textHeaders);
+        }
 
-        System.out.println(cells.size());
+
+        //System.out.println(headers.size());
 
         //for (WebElement c1: cells){
 //String T1=c1.getText();
