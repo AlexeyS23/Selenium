@@ -39,7 +39,7 @@ public class Task1 {
                     System.out.println("I found it");
 
                     notFound=false;
-                    driver.findElement(By.xpath("//table[@id='resultTable']/tbody/tr/td/input")).click();
+                    driver.findElement(By.xpath("//table[@id='resultTable']/tbody/tr["+(i+1)+"]/td/input")).click();
                     break;
                 }
 
